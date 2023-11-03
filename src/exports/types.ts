@@ -6,7 +6,7 @@ export type Character = {
     StartingHp: number
     StartingAtk: number,
     StartingDef: number, 
-    StartingSpeed: number,
+    StartingSpd: number,
 }
 
 export enum CombatElement {
