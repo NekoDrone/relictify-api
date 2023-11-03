@@ -56,7 +56,7 @@ export enum RelicType {
     PlanarCelestialDifferentiator,
     PlanarFleetOfTheAgeless,
     PlanarInertSalsotto,
-    PlanarPanGalacticCommercialEnterprise,
+    PlanarPanCosmicCommercialEnterprise,
     PlanarSpaceSealingStation,
     PlanarSprightlyVonwacq,
     PlanarTaliaKingdomOfBanditry,
