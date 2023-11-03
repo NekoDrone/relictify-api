@@ -16,4 +16,4 @@ The data provided is for reference, and will be updated as Honkai: Star Rail is 
 ## Contributing
 
 ---
-The project is not accepting contributions at this moment. If you would like to contribute to and open source project, please consider contributing to [Relictify](https://github.com/NekoDrone/Relictify) instead.
+The project is not accepting contributions at this moment. If you would like to contribute to an open source project, please consider contributing to [Relictify](https://github.com/NekoDrone/Relictify) instead.
