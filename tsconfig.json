@@ -9,8 +9,9 @@
     "allowUnreachableCode": false,
     "declaration": true,
     "strictNullChecks": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "esModuleInterop": true
   },
   "include": ["src/**/*"],
-  "exclude": ["tests/**/*"],
+  "exclude": ["tests/**/*"]
 }
