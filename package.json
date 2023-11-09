@@ -5,7 +5,8 @@
   "main": "src/app.ts",
   "scripts": {
     "build": "tsc && babel src -d build --extensions '.ts'",
-    "start": "npm run build && node build/app.js",
+    "start": "npm run build && PROD_ENV=prod node build/app.js",
+    "startdev": "npm run build && PROD_ENV=dev node build/app.js",
     "test": "jest"
   },
   "author": "NekoDrone",

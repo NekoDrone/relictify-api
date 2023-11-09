@@ -2,11 +2,13 @@ import express from "express";
 import {routes} from "./routes"
 import {Authorizer, IAuthorizer} from "./middleware/auth";
 import {ILogger, Logger} from "./middleware/logger";
+import {PROD_ENV} from "./exports/consts";
 
 const app = express();
 const port = 3000;
 const logger: ILogger = new Logger();
 const auth: IAuthorizer = new Authorizer();
+console.log(`Production environment is ${PROD_ENV}`);
 
 app.listen(port,  () => {
     console.log("Relictify API serving requests.");
