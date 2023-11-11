@@ -1,0 +1,23 @@
+  on:
+    push:
+    workflow_dispatch: 
+  jobs:
+    run-tests:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout branch
+          uses: actions/checkout@v4
+          
+        - name: Setup node
+          uses: actions/setup-node@v3
+          with:
+            node-version: 18
+            cache: 'npm'
+        
+        - name: Install packages, build, and run tests.
+          run: |
+            npm i
+            npm run build
+            npm run test
+          
+          
