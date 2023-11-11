@@ -1,7 +1,7 @@
-import {RelicFactory} from "../../src/factory/relicItemFactory";
-import {RelicType} from "../../src/exports/types";
-import {relicsManifest} from "../../src/exports/manifest/relicsManifest";
-import {RelicRoute} from "../../src/routes/relics";
+import {IRelicBuilder, RelicFactory} from "../../build/factory/relicItemFactory";
+import {RelicType} from "../../build/exports/types";
+import {relicsManifest} from "../../build/exports/manifest/relicsManifest";
+import {RelicRoute} from "../../build/routes/relics";
 
 beforeAll(() => {
     process.env.APP_AUTH_KEY = "testing";
@@ -9,7 +9,7 @@ beforeAll(() => {
 })
 
 test("Invalid relic should return correctly.", () => {
-    const builder = new RelicFactory();
+    const builder: IRelicBuilder = new RelicFactory();
     const invalidRelic = builder.getInvalidRelic();
     expect(invalidRelic).toEqual({
         RelicName: "Relic Not Found",
@@ -18,7 +18,7 @@ test("Invalid relic should return correctly.", () => {
 });
 
 test("Relics factory should produce correct result when given an ID to look up.", () => {
-    const builder = new RelicFactory();
+    const builder: IRelicBuilder = new RelicFactory();
     const relicItem = builder.getRelicById(RelicType.CavernBandOfSizzlingThunder);
     expect(relicItem).toEqual({
         RelicName: "Band of Sizzling Thunder",
@@ -48,4 +48,10 @@ test("Relic route handler should return correct query", () => {
         RelicName: "Band of Sizzling Thunder",
         TypeId: RelicType.CavernBandOfSizzlingThunder
     })
+})
+
+test("Relic route handler should retrieve correct manifest.", () => {
+    const handler = new RelicRoute();
+    const manifest = handler.getManifest();
+    expect(manifest).toEqual(relicsManifest);
 })

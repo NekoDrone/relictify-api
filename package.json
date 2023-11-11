@@ -7,7 +7,7 @@
     "build": "tsc && babel src -d build --extensions '.ts'",
     "start": "npm run build && PROD_ENV=prod node build/app.js",
     "startdev": "npm run build && PROD_ENV=dev node build/app.js",
-    "test": "jest"
+    "test": "npm run build && jest --coverage"
   },
   "author": "NekoDrone",
   "license": "ISC",
