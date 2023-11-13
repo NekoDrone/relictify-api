@@ -5,7 +5,8 @@
   "main": "src/app.ts",
   "scripts": {
     "build": "tsc && babel src -d build --extensions '.ts'",
-    "start": "npm ci --omit=dev && PROD_ENV=prod node build/app.js",
+    "prestart": "npm ci --omit=dev",
+    "start": "PROD_ENV=prod node build/app.js",
     "startdev": "npm run build && PROD_ENV=dev node build/app.js",
     "test": "npm run build && jest --coverage"
   },
