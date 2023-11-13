@@ -29,6 +29,6 @@
         - name: Upload build artifacts
           uses: actions/upload-artifact@v3
           with:
-            name: build-$GITHUB_ACTOR-${{ steps.date.outputs.date }}
+            name: latest-build
             path: ./build
               
