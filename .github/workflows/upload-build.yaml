@@ -19,7 +19,7 @@
               
         - name: Install and build source.
           run: |
-            npm i
+            npm install
             npm run build
             
         - name: Get current date.
@@ -30,5 +30,8 @@
           uses: actions/upload-artifact@v3
           with:
             name: latest-build
-            path: ./build
-              
+            path: |
+              ./node_modules
+              ./build
+              ./package.json
+              ./package-lock.json
