@@ -5,9 +5,6 @@
     push:
       branches:
         - prod
-    pull_request:
-      branches:
-        - prod
 
   env:
     AZURE_WEBAPP_NAME: relictify-api
