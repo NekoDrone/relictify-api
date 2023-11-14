@@ -5,7 +5,7 @@ import {ILogger, Logger} from "./middleware/logger";
 import {PROD_ENV} from "./exports/consts";
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT ?? 8080;
 const logger: ILogger = new Logger();
 const auth: IAuthorizer = new Authorizer();
 console.log(`Production environment is ${PROD_ENV}`);
