@@ -8,9 +8,9 @@ export interface IAuthorizer {
 export class Authorizer implements IAuthorizer {
     authHandler(req: express.Request, res: express.Response, next: Function) {
         console.log(`Application key is ${appAuthKey}`)
-        console.log(`Request is : ${req}`)
+        console.log(`Request is: ${JSON.stringify(req)}`)
         const requestBody = req.body;
-        console.log(`Request body: ${requestBody}`)
+        console.log(`Request body: ${JSON.stringify(requestBody)}`)
         const userKey = requestBody.authKey ?? "undefined";
         console.log(`Request auth key is ${userKey}`)
         if(userKey == appAuthKey)
