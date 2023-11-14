@@ -21,5 +21,6 @@ export class Authorizer implements IAuthorizer {
         //     console.log("Incoming request not authorised. Access denied.")
         //     res.status(401).send();
         // }
+        next();
     }
 }
