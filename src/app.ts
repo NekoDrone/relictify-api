@@ -15,12 +15,7 @@ console.log(`Production environment is ${PROD_ENV}`);
 app.listen(port,  () => {
     console.log("Relictify API serving requests.");
 });
-app.use(bodyParser.json());
-app.use((req, res, next) => {
-    console.log(`NOT MIDDLEWARE Request body is: ${req.body ?? 'undefined'}`);
-    console.log(`NOT MIDDLEWARE App Auth Key is ${req.body.authKey ?? 'undefined'}`);
-    next();
-})
+app.use(bodyParser.json()); // apparently, we need to use body-parser directly. Is this an issue that we should log?
 app.use(logger.logRequest);
 app.use(auth.authHandler);
 
