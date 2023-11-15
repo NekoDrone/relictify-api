@@ -19,6 +19,7 @@ app.use(bodyParser.json());
 app.use((req, res, next) => {
     console.log(`NOT MIDDLEWARE Request body is: ${req.body ?? 'undefined'}`);
     console.log(`NOT MIDDLEWARE App Auth Key is ${req.body.authKey ?? 'undefined'}`);
+    next();
 })
 app.use(logger.logRequest);
 app.use(auth.authHandler);
