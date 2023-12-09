@@ -25,6 +25,11 @@ export const cavernLongevousDisciple: Relic = {RelicName: "Longevous Disciple", 
 export const cavernMessengerTraversingHackerspace: Relic = {RelicName: "Messenger Traversing Hackerspace", TypeId: RelicType.CavernMessengerTraversingHackerspace}
 export const planarRutilantArena: Relic = {RelicName: "Rutilant Arena", TypeId: RelicType.PlanarRutilantArena}
 export const planarBrokenKeel: Relic = {RelicName: "Broken Keel", TypeId: RelicType.PlanarBrokenKeel}
+export const cavernAshblazingGrandDuke: Relic = {RelicName: "The Ashblazing Grand Duke", TypeId: RelicType.CavernAshblazingGrandDuke}
+export const cavernPrisonerInDeepConfinement: Relic = {RelicName: "Prisoner In Deep Confinement", TypeId: RelicType.CavernPrisonerInDeepConfinement};
+export const planarFirmamentFrontline: Relic = {RelicName: "Firmament Frontline: Glamoth", TypeId: RelicType.PlanarFirmamentFrontline}
+export const planarPenaconyLandOfTheDreams: Relic = {RelicName: "Penacony, Land of the Dreams", TypeId: RelicType.PlanarPenaconyLandOfTheDreams}
+
 export const relicsManifest: Relic[] = [
     cavernBandOfSizzlingThunder,
     cavernChampionOfStreetwiseBoxing,
@@ -49,5 +54,9 @@ export const relicsManifest: Relic[] = [
     cavernLongevousDisciple,
     cavernMessengerTraversingHackerspace,
     planarRutilantArena,
-    planarBrokenKeel
+    planarBrokenKeel,
+    cavernAshblazingGrandDuke,
+    cavernPrisonerInDeepConfinement,
+    planarFirmamentFrontline,
+    planarPenaconyLandOfTheDreams
 ];

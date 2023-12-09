@@ -64,5 +64,10 @@ export enum RelicType {
     CavernLongevousDisciple,
     CavernMessengerTraversingHackerspace,
     PlanarRutilantArena,
-    PlanarBrokenKeel
+    PlanarBrokenKeel,
+    
+    CavernAshblazingGrandDuke,
+    CavernPrisonerInDeepConfinement,
+    PlanarFirmamentFrontline,
+    PlanarPenaconyLandOfTheDreams
 }
