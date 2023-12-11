@@ -385,6 +385,38 @@ export const topazAndNumby: Character = {
     StartingSpd: 110
 }
 
+export const huohuo: Character = {
+    Element: CombatElement.Wind,
+    Name: "Huohuo",
+    Path: CharPath.Abundance,
+    Rarity: 5,
+    StartingHp: 184,
+    StartingAtk: 81,
+    StartingDef: 69,
+    StartingSpd: 98
+}
+
+export const argenti: Character = {
+    Element: CombatElement.Physical,
+    Name: "Argenti",
+    Path: CharPath.Erudition,
+    Rarity: 5,
+    StartingHp: 142,
+    StartingAtk: 100,
+    StartingDef: 49,
+    StartingSpd: 103
+}
+
+export const hanya: Character = {
+    Element: CombatElement.Physical,
+    Name: "Hanya",
+    Path: CharPath.Harmony,
+    Rarity: 4,
+    StartingHp: 124,
+    StartingAtk: 76,
+    StartingDef: 48,
+    StartingSpd: 110
+}
 
 // export const template: Character = {
 //     Element: CombatElement,
@@ -432,7 +464,10 @@ export const characterManifest: Character[] = [
     fuXuan,
     guinaifen,
     jingliu,
-    topazAndNumby
+    topazAndNumby,
+    huohuo,
+    argenti,
+    hanya
 ];
 
 
