@@ -1,11 +1,11 @@
 import {relicsManifest} from "../exports/manifest/relicsManifest";
-import {Relic, RelicType} from "../exports/types";
+import {Relic, RelicSet} from "../exports/types";
 
 export class RelicFactory implements IRelicBuilder {
     getInvalidRelic(): Relic {
         return {
             RelicName: "Relic Not Found",
-            TypeId: RelicType.None
+            TypeId: RelicSet.None
         };
     }
 

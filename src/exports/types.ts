@@ -33,10 +33,10 @@ export enum CharPath {
 
 export type Relic = {
     RelicName: string;
-    TypeId: RelicType;
+    TypeId: RelicSet;
 }
 
-export enum RelicType {
+export enum RelicSet {
     None,
 
     CavernBandOfSizzlingThunder,
