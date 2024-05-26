@@ -1,0 +1,20 @@
+{
+  "name": "relictify-api",
+  "version": "1.0.0",
+  "description": "API for Relictify",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "author": "NekoDrone",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "itty-router": "^5.0.17"
+  }
+}
