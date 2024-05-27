@@ -13,4 +13,40 @@ datasource db {
   url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
 }
-        
+
+model Character {
+  id Int @id @default(autoincrement())
+  rarity Int
+  name String @unique
+  element CombatElement
+  path CharPath
+  startingHp BigInt
+  startingAtk BigInt
+  startingDef BigInt
+  startingSpd BigInt
+}
+
+enum CombatElement {
+  PHYSICAL
+  FIRE
+  ICE
+  LIGHTNING
+  WIND
+  QUANTUM
+  IMAGINARY
+}
+
+enum CharPath {
+  DESTRUCTION
+  HUNT
+  ERUDITION
+  HARMONY
+  NIHILITY
+  PRESERVATION
+  ABUNDANCE
+}
+
+model Relic {
+  id Int @id @default(autoincrement())
+  name String
+}

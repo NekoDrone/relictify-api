@@ -1,4 +1,5 @@
 export type Character = {
+    Id: number
     Rarity: number,
     Name: string, 
     Element: CombatElement,
@@ -10,7 +11,6 @@ export type Character = {
 }
 
 export enum CombatElement {
-    None,
     Physical,
     Ice,
     Wind,
@@ -21,7 +21,6 @@ export enum CombatElement {
 }
 
 export enum CharPath {
-    None,
     Destruction,
     Preservation,
     TheHunt,
@@ -32,7 +31,8 @@ export enum CharPath {
 }
 
 export type Relic = {
-    RelicName: string;
+    Id: number;
+    Name: string;
     TypeId: RelicSet;
 }
 
