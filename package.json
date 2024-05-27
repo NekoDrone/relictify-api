@@ -7,7 +7,10 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "test"
+    "build": "vite build",
+    "test": "vitest",
+    "decrypt-dev": "cd env && bash ./decrypt.sh -e DEV",
+    "decrypt-prod": "cd env && bash ./decrypt.sh -e PROD"
   },
   "author": "NekoDrone",
   "license": "ISC",
@@ -20,6 +23,7 @@
     "vitest": "^1.6.0"
   },
   "dependencies": {
+    "@prisma/client": "^5.14.0",
     "itty-router": "^5.0.17"
   }
 }
