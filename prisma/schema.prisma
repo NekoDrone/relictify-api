@@ -20,10 +20,10 @@ model Character {
   name String @unique
   element CombatElement
   path CharPath
-  startingHp BigInt
-  startingAtk BigInt
-  startingDef BigInt
-  startingSpd BigInt
+  startingHp Int
+  startingAtk Int
+  startingDef Int
+  startingSpd Int
 }
 
 enum CombatElement {

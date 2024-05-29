@@ -7,15 +7,24 @@
     "test": "tests"
   },
   "scripts": {
-    "build": "vite build",
+    "build": "node ./esbuild.config.mjs",
     "test": "vitest",
     "decrypt-dev": "cd env && bash ./decrypt.sh -e DEV",
-    "decrypt-prod": "cd env && bash ./decrypt.sh -e PROD"
+    "decrypt-prod": "cd env && bash ./decrypt.sh -e PROD",
+    "dev": "npm run build && dotenv -e .env -c development -- node build/app.js",
+    "prod": "npm ci && npm run build && dotenv -e .env -c production -- node build/app.js",
+    "reset-db-dev": "dotenv -e .env -c development -- prisma migrate reset --skip-seed",
+    "db-migrate-dev": "dotenv -e .env -c development -- prisma migrate dev --name init-db",
+    "seed-all-dev": "dotenv -e .env -c development ts-node src/tests/mocks/seedCharacters.ts && dotenv -e .env -c development ts-node tests/mocks/seedRelics.ts",
+    "seed-chars-dev": "dotenv -e .env -c development ts-node src/tests/mocks/seedCharacters.ts",
+    "seed-relics-dev": "dotenv -e .env -c development ts-node src/tests/mocks/seedRelics.ts",
+    "dev-studio": "dotenv -e .env -c development npx prisma studio"
   },
   "author": "NekoDrone",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.12.12",
+    "esbuild": "0.21.4",
     "prisma": "^5.14.0",
     "ts-node": "^10.9.2",
     "tslib": "^2.6.2",
@@ -24,6 +33,10 @@
   },
   "dependencies": {
     "@prisma/client": "^5.14.0",
+    "@whatwg-node/server": "^0.9.34",
     "itty-router": "^5.0.17"
+  },
+  "prisma": {
+    "seed": "ts-node -r --transpile-only prisma/seed.ts"
   }
 }
