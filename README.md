@@ -25,7 +25,8 @@ The data provided is for reference, and will be updated as Honkai: Star Rail is 
 1. Install [dotenv-cli](https://www.npmjs.com/package/dotenv-cli). This repo does not provide the cli tool for you.
 2. Install other dependencies. `npm install`
 3. Decrypt development environment variables. `npm run decrypt-dev -- -k <decryption key>`
-4. Run the project using `npm run dev`.
+4. Activate Prisma and seed the db `npm run db-migrate-dev`
+5. Run the project using `npm run dev`.
 
 ## Contributing
 
