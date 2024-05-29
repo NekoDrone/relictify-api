@@ -1,22 +1,11 @@
-import express from "express";
-import {routes} from "./routes"
-import {Authorizer, IAuthorizer} from "./middleware/auth";
-import {ILogger, Logger} from "./middleware/logger";
-import {PROD_ENV} from "./exports/consts";
-import * as bodyParser from "body-parser"
+import { createServerAdapter } from "@whatwg-node/server";
+import router from "./router";
+import { createServer } from "http";
 
-const app = express();
-const port = process.env.PORT ?? 8080;
+const ittyServer = createServerAdapter(router.fetch);
 
-const logger: ILogger = new Logger();
-const auth: IAuthorizer = new Authorizer();
-console.log(`Production environment is ${PROD_ENV}`);
+const httpServer = createServer(ittyServer)
 
-app.listen(port,  () => {
-    console.log("Relictify API serving requests.");
-});
-app.use(bodyParser.json()); // apparently, we need to use body-parser directly. Is this an issue that we should log?
-app.use(logger.logRequest);
-app.use(auth.authHandler);
-
-app.use('/', routes);
+const port = 8080;
+console.log(`Starting server on port ${port}`)
+httpServer.listen(port);
