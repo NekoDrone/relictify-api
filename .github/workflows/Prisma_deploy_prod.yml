@@ -1,0 +1,37 @@
+name: Deploy new Prisma schema
+run-name: Deploy new migration schema to production DB from ${{ github.ref_name }}
+on:
+  push:
+    paths:
+      - ./prisma/migrations/** # Only run this workflow when migrations are updated
+      - prisma/migrations/**
+      - './prisma/migrations/**'
+      - 'prisma/migrations/**'
+    branches:
+      - main
+  pull_request:
+    paths:
+      - ./prisma/migrations/** # Only run this workflow when migrations are updated
+      - prisma/migrations/**
+      - './prisma/migrations/**'
+      - 'prisma/migrations/**'
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+      - name: Install dependencies
+        run: npm install
+      - name: check database URL
+        run: echo $DATABASE_URL
+      - name: Apply all pending migrations to the database
+        run: npx prisma migrate deploy
+        env:
+          DATABASE_URL: ${{ secrets.PROD_DATABASE_URL }}
+          DIRECT_URL: ${{ secrets.PROD_DIRECT_URL }}
