@@ -8,9 +8,9 @@ type AuthBody = {
 }
 
 const withAuth = async ( request: IRequest ) => {
-    const reqToken = request.content as AuthBody;
-    console.log(JSON.stringify(reqToken))
-    if (reqToken.relictifyAuth != encodedAuth) return error(401, 'Incoming request not authorised. Please provide the correct "relictifyAuth" token in the request body')
+    const reqToken = request.headers.get('Authorization - Relictify')
+    if (!reqToken) return error(400, '\'Authorization - Relictify\' header not found. Please set it in the request.')
+    if (reqToken != encodedAuth) return error(401, 'Incoming request not authorised. Please ensure the correct \'Authorization - Relictify\' header is set properly.')
 }
 
 export default withAuth
