@@ -20,7 +20,7 @@
     "db:dev:seed:relics": "dotenv -e .env -c development ts-node src/tests/mocks/seedRelics.ts",
     "db:dev:studio": "dotenv -e .env -c development npx prisma studio",
     "db:prod:migrate": "dotenv -e .env -c production npx prisma migrate deploy",
-    "prod:deploy:vercel": "npm run db:prod:migrate && npm run prod"
+    "prod:deploy:vercel": "npm run decrypt-prod -- -k $ENV_ENC_KEY && npm run db:prod:migrate && npm run prod"
   },
   "author": "NekoDrone",
   "license": "ISC",
