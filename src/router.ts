@@ -8,7 +8,7 @@ router
     .all('*', withAuth)
     .get('/characters', allChars)
     .get('/characters/:id', ({ id }) => charById(id))
-    .get('/relics')
+    .get('/relics', () => ({"foo": "bar"}))
     .get('/relics/:id')
 
 export default router
