@@ -21,7 +21,7 @@
     "db:dev:studio": "dotenv -e .env -c development npx prisma studio",
     "db:prod:migrate": "prisma generate dotenv -e .env -c production npx prisma migrate deploy",
     "db:prod:seed": "dotenv -e .env -c production ts-node src/tests/mocks/seedCharacters.ts && dotenv -e .env -c production ts-node tests/mocks/seedRelics.ts",
-    "prod:deploy:vercel": "npm run decrypt-prod -- -k $ENV_ENC_KEY && npm run db:prod:migrate && npm run db:prod:seed && npm run prod"
+    "prod:deploy:vercel": "npm run decrypt-prod -- -k $ENV_ENC_KEY && npm run db:prod:migrate && npm run prod"
   },
   "author": "NekoDrone",
   "license": "ISC",
