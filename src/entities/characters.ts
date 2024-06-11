@@ -1,5 +1,5 @@
 // Following are Characters you use while going through the main story in Herta Space Station.
-import { Character, CharPath, CombatElement } from "@prisma/client";
+import { CharPath, CombatElement } from "@prisma/client";
 
 export const trailblazerDestruction = {
     element: CombatElement.PHYSICAL,
