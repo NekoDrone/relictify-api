@@ -4,7 +4,9 @@
   "description": "Backend API service for Relictify.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "decrypt-dev": "cd env && bash ./decrypt.sh -e DEV",
+    "decrypt-prod": "cd env && bash ./decrypt.sh -e PROD"
   },
   "author": "Serenity Tan",
   "license": "ISC"
