@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "decrypt-dev": "cd env && bash ./decrypt.sh -e DEV",
-    "decrypt-prod": "cd env && bash ./decrypt.sh -e PROD"
+    "env:decrypt:dev": "cd env && bash ./decrypt.sh -e DEV",
+    "env:decrypt:prod": "cd env && bash ./decrypt.sh -e PROD",
+    "fn:local:serve": "supabase functions serve --env-file ./.env.development"
   },
   "author": "Serenity Tan",
   "license": "ISC"
