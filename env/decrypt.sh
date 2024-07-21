@@ -1,9 +1,12 @@
+#!/usr/bin/env bash
+
 DECRYPTION_KEY=""
 ENV=""
 
 usage() {
   echo "Please provide the decryption key."
   echo "Usage: $0 -k <decryption_key> -e <DEV or PROD>"
+  exit 1
 }
 
 decryptDev() {
