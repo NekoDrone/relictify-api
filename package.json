@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "env:decrypt:dev": "cd env && bash ./decrypt.sh -e DEV",
     "env:decrypt:prod": "cd env && bash ./decrypt.sh -e PROD",
-    "fn:local:serve": "supabase functions serve --env-file ./.env.development"
+    "fn:local:serve": "supabase functions serve --env-file ./.env.development",
+    "data:characters:gen": "cd helpers && ts-node generateCharData.ts"
   },
   "author": "Serenity Tan",
   "license": "ISC"
