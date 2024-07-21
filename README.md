@@ -12,7 +12,7 @@ If you would like access to the API, you can fork the project, and host the API 
 
 The data provided is for reference, and will be updated as Honkai: Star Rail is updated.
 
-For [Relictify](https://github.com/NekoDrone/relictify-app) contributors, you will not need to set up this project in order to set up the project. The development copy of the application uses the production database to populate configurations such as character data and relic information.\
+For [Relictify](https://github.com/NekoDrone/relictify-app) contributors, you will not need to set up this project in order to set up the project. The development copy of the application uses the production database to populate configurations such as character data and relic information.
 
 Please refer to the instructions for setup on Relictify's [contributing page](https://github.com/NekoDrone/relictify-app/blob/master/CONTRIBUTING.md) if you intend to contribute to the frontend.
 
