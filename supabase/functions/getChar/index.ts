@@ -1,6 +1,11 @@
 import { createClient } from 'jsr:@supabase/supabase-js@2'
+import { corsHeaders } from "../_shared/cors.ts";
 
 Deno.serve(async (req) => {
+
+  if (req.method === 'OPTIONS') {
+    return new Response('ok', { headers: corsHeaders })
+  }
 
   const supabase = createClient(
     Deno.env.get('SUPABASE_URL') ?? '',
@@ -20,5 +25,5 @@ Deno.serve(async (req) => {
     }}
 
   if (error) return new Response(JSON.stringify(error), {status: error.status ?? 500});
-  return new Response(JSON.stringify(data), { headers: { "Content-Type": "application/json" } });
+  return new Response(JSON.stringify(data), { headers: { ...corsHeaders, "Content-Type": "application/json" } });
 })
